@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Calculator App</title>
+        <link rel="apple-touch-icon" sizes="180x180" href="./images/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="./images/favicon-16x16.png">
+        <link rel="manifest" href="./images/site.webmanifest">
+        <link rel="stylesheet" href="./css/normalize.css">
+        <link rel="stylesheet" href="./css/style.css">
+    </head>
+    <body>
+        <article class="card-calculator animate__animated animate__slideInDown">
+            <h1 class="card-calculator__title">Calculator App</h1>
+            <div class="card-calculator__column-one">
+                <form class="column-one__form">
+                    <input
+                        class="form__display"
+                        type="text"
+                        placeholder="0"
+                        readonly="readonly"
+                        name="display"
+                        id="display"
+                    />
+                    <button class="form__button" data-item="1">1</button>
+                    <button class="form__button" data-item="2">2</button>
+                    <button class="form__button" data-item="3">3</button>
+                    <button class="form__button" data-item="4">4</button>
+                    <button class="form__button" data-item="5">5</button>
+                    <button class="form__button" data-item="6">6</button>
+                    <button class="form__button" data-item="7">7</button>
+                    <button class="form__button" data-item="8">8</button>
+                    <button class="form__button" data-item="9">9</button>
+                    <button class="form__button" data-item="0">0</button>
+                    <button class="form__button" data-item="(">(</button>
+                    <button class="form__button" data-item=")">)</button>
+                    <button
+                        class="form__button form__button--plus"
+                        data-item="+"
+                    >
+                        +
+                    </button>
+                    <button
+                        class="form__button form__button--asterisk"
+                        data-item="*"
+                    >
+                        *
+                    </button>
+                    <button
+                        class="form__button form__button--minus"
+                        data-item="-"
+                    >
+                        -
+                    </button>
+                    <button
+                        class="form__button form__button--slash"
+                        data-item="/"
+                    >
+                        /
+                    </button>
+                    <button
+                        class="form__button form__button--equal"
+                        data-item="="
+                    >
+                        =
+                    </button>
+                    <button
+                        class="form__button form__button--delete"
+                        id="reset"
+                    >
+                        AC
+                    </button>
+                </form>
+                <fieldset class="card-calculator__history">
+                    <legend class="card-calculator__history-legend">
+                        History
+                    </legend>
+                    <div class="card-calculator__history-display">
+                        <ul class="card-calculator__history-list">
+                            <li class="card-calculator__history-list__item">
+                                <p class="card-calculator__history-list__text">
+                                    <span
+                                        class="
+                                            card-calculator__history-list__text--small
+                                        "
+                                        >4+4</span
+                                    >8
+                                </p>
+                            </li>
+                            <li class="card-calculator__history-list__item">
+                                <p class="card-calculator__history-list__text">
+                                    <span
+                                        class="
+                                            card-calculator__history-list__text--small
+                                        "
+                                        >4+4</span
+                                    >8
+                                </p>
+                            </li>
+                            <li class="card-calculator__history-list__item">
+                                <p class="card-calculator__history-list__text">
+                                    <span
+                                        class="
+                                            card-calculator__history-list__text--small
+                                        "
+                                        >4+4</span
+                                    >8
+                                </p>
+                            </li>
+                            <li class="card-calculator__history-list__item">
+                                <p class="card-calculator__history-list__text">
+                                    <span
+                                        class="
+                                            card-calculator__history-list__text--small
+                                        "
+                                        >4+4</span
+                                    >8
+                                </p>
+                            </li>
+                            <li class="card-calculator__history-list__item">
+                                <p class="card-calculator__history-list__text">
+                                    <span
+                                        class="
+                                            card-calculator__history-list__text--small
+                                        "
+                                        >4+4</span
+                                    >8
+                                </p>
+                            </li>
+                            <li class="card-calculator__history-list__item">
+                                <p class="card-calculator__history-list__text">
+                                    <span
+                                        class="
+                                            card-calculator__history-list__text--small
+                                        "
+                                        >4+4</span
+                                    >8
+                                </p>
+                            </li>
+                            <li class="card-calculator__history-list__item">
+                                <p class="card-calculator__history-list__text">
+                                    <span
+                                        class="
+                                            card-calculator__history-list__text--small
+                                        "
+                                        >4+4</span
+                                    >8
+                                </p>
+                            </li>
+                        </ul>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="card-calculator__column-two">
+                <button class="column-two__button">Change Position</button>
+                <button class="column-two__button">Random NumPad</button>
+                <button class="column-two__button">RTL History</button>
+            </div>
+        </article>
+        <script src="./js/app.js"></script>
+    </body>
+</html>
