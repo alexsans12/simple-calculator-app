@@ -1,6 +1,6 @@
 # Code Society - Challenge Calc solution
 
-This is a solution to the [Challenge Calc](https://cdn.discordapp.com/attachments/885006350151733278/893692593010016407/unknown.png). 
+This is a solution to the [Challenge Calc](https://discord.gg/ndbz7d9g). 
 
 ## Table of contents
 
@@ -25,7 +25,7 @@ This is a solution to the [Challenge Calc](https://cdn.discordapp.com/attachment
 
 ### Links
 
-- Live Site URL: [Netlify](https://alexsans-time-tracking-dashboard.netlify.app/)
+- Live Site URL: [Netlify](https://alexsans-challenge-calculator.netlify.app/)
 
 ## My process
 
