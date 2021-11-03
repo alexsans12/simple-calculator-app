@@ -24,6 +24,7 @@ body {
     justify-content: center;
     min-height: 95vh;
     background-color: $Light-Cornflower-Blue;
+    padding: 2rem 0;
 }
 
 .card-calculator {
@@ -67,8 +68,18 @@ body {
         margin-bottom: 40px;
         font-family: "Roboto Mono", monospace;
 
+        @media screen and (max-width: 800px) {
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
         &--reverse {
             flex-direction: row-reverse;
+
+            @media screen and (max-width: 800px) {
+                flex-direction: column-reverse;
+            }
         }
         
         .column-one__form {
@@ -144,12 +155,6 @@ body {
                     grid-column: 1 / 4;
                 }
             }
-        }
-
-        @media screen and (max-width: 800px) {
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
         }
     }
 

@@ -53,7 +53,7 @@ function addToDisplay(number, operator) {
 
     if(number)
         inputDisplay.value += number;
-    else if(operator !== "" && (Number(lastChart) || operator === '(' || operator === ')' )) {
+    else if(operator !== "" && (Number(lastChart) || operator === '(' || operator === ')' || operator === '-')) {
         if(operator === '(' && (Number(lastChart)))
             inputDisplay.value += '*' + operator;
         else
@@ -144,22 +144,23 @@ function randomButtons() {
     });
 
     for (let index = 0; index < randomPositions.size; index++) {
-        buttons[index].textContent = randomPositions.get(index);
-        buttons[index].removeAttribute('data-number');
-        buttons[index].removeAttribute('data-operator');
-        
-        if(Number(randomPositions.get(index)))
-            buttons[index].setAttribute('data-number', randomPositions.get(index));
-        else if(!Number(randomPositions.get(index)) && buttons[index].id !== '') {
-            buttons[index].id = '';
-        }   
-        else if(randomPositions.get(index) === '=')
-            buttons[index].id = 'resolve';
-        else if(randomPositions.get(index) === 'AC')
-            buttons[index].id = 'reset';
-        else
-            buttons[index].setAttribute('data-operator', randomPositions.get(index));
+        const data = randomPositions.get(index);
+        const button = buttons[index]; 
 
-        console.log(randomPositions.get(index));
+        button.textContent = data;
+        button.removeAttribute('data-number');
+        button.removeAttribute('data-operator');
+        
+        if(Number(data))
+            button.setAttribute('data-number', data);
+        else if(!Number(data) && button.id !== '') {
+            button.id = '';
+        }   
+        else if(data === '=')
+            button.id = 'resolve';
+        else if(data === 'AC')
+            button.id = 'reset';
+        else
+            button.setAttribute('data-operator', data);
     }
 }

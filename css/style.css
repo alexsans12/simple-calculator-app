@@ -17,6 +17,7 @@ body {
   justify-content: center;
   min-height: 95vh;
   background-color: #8ecae6;
+  padding: 2rem 0;
 }
 
 .card-calculator {
@@ -59,8 +60,20 @@ body {
   margin-bottom: 40px;
   font-family: "Roboto Mono", monospace;
 }
+@media screen and (max-width: 800px) {
+  .card-calculator__column-one {
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+}
 .card-calculator__column-one--reverse {
   flex-direction: row-reverse;
+}
+@media screen and (max-width: 800px) {
+  .card-calculator__column-one--reverse {
+    flex-direction: column-reverse;
+  }
 }
 .card-calculator__column-one .column-one__form {
   display: grid;
@@ -127,13 +140,6 @@ body {
 }
 .card-calculator__column-one .column-one__form .form__button--equal {
   grid-column: 1/4;
-}
-@media screen and (max-width: 800px) {
-  .card-calculator__column-one {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-  }
 }
 .card-calculator__history {
   width: 50%;
