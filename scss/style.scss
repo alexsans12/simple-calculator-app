@@ -2,11 +2,11 @@
 
 @import url("https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css");
 
-$Light-Cornflower-Blue: hsl(199, 64, 73);
-$Blue-Green: hsl(192, 70, 43);
-$Prussian-Blue: hsl(200, 95, 14);
-$Honey-Yellow: hsl(43, 100, 51);
-$Orange: hsl(32, 100, 49);
+$Light-Cornflower-Blue: hsl(199, 64%, 73%);
+$Blue-Green: hsl(192, 70%, 43%);
+$Prussian-Blue: hsl(200, 95%, 14%);
+$Honey-Yellow: hsl(43, 100%, 51%);
+$Orange: hsl(32, 100%, 49%);
 
 html {
     box-sizing: border-box;
@@ -63,12 +63,17 @@ body {
     &__column-one {
         display: flex;
         justify-content: space-between;
+        gap: 40px;
         margin-bottom: 40px;
         font-family: "Roboto Mono", monospace;
 
+        &--reverse {
+            flex-direction: row-reverse;
+        }
+        
         .column-one__form {
             display: grid;
-            grid-template-columns: repeat(4, calc(max-width / 4));
+            grid-template-columns: repeat(4, calc(90% / 4));
             grid-template-rows: auto;
             gap: 10px;
             width: 50%;
@@ -150,13 +155,24 @@ body {
 
     &__history {
         width: 50%;
-        margin-left: 40px;
         border: none;
         padding: 0;
 
         @media screen and (max-width: 800px) {
             width: 100%;
             margin: 0;
+        }
+
+        &--left {
+            legend {
+                text-align: left;
+            }
+
+            ul li {
+                text-align: left;
+                padding-right: 0;
+                padding-left: 10px;
+            }
         }
 
         &-legend {
@@ -195,6 +211,8 @@ body {
                 text-align: right;
                 width: 100%;
                 padding-right: 10px;
+                padding-top: 5px;
+                padding-bottom: 5px;
 
                 &:nth-child(even) {
                     background-color: hsla(192, 70%, 20%, 0.2);
@@ -246,5 +264,34 @@ body {
                 transform: translateY(5px);
             }
         }
+    }
+}
+
+.card-error {
+    width: 300px;
+    height: 100px;
+    background-color: rgb(255, 160, 160);
+    position: absolute;
+    top: 30px;
+    right: 40px;
+    border-radius: 5px;
+    z-index: 1;
+    border-top: 10px solid rgb(238, 69, 69);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.2);
+    padding-left: 20px;
+    padding-right: 20px;
+    align-items: center;
+    justify-content: center;
+    display: none;
+
+    &__text {
+        font-size: 1rem;
+        font-weight: 400;
+        color: rgb(242, 45, 45);
+        margin: 0;
+    }
+
+    &--show {
+        display: flex;
     }
 }
