@@ -1,17 +1,17 @@
 const formCalc = document.querySelector('.column-one__form');
+const columnTwo = document.querySelector('.card-calculator__column-two');
 const cardError = document.querySelector('.card-error');
-const buttons = document.querySelectorAll('.form__button');
-const funButtons = document.querySelectorAll('.column-two__button');
 const inputDisplay = document.querySelector('.form__display');
 const historyDisplay = document.querySelector('.card-calculator__history-list');
 const historyArray = [];
 
 
 document.addEventListener("DOMContentLoaded", () => {
-    buttons.forEach((button) => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
-
+    formCalc.addEventListener("click", (e) => {
+        e.preventDefault();
+        const button = e.target;
+    
+        if(button.tagName.toLowerCase() === "button") {
             const number = button.getAttribute('data-number');
             const operator = button.getAttribute('data-operator');
 
@@ -20,26 +20,31 @@ document.addEventListener("DOMContentLoaded", () => {
             else {
                 if(button.id === "reset")
                     resetDisplay();
+                else if(button.id === "delete")
+                    deleteCharacter();
                 else {
                     if(inputDisplay.value !== '')
                         resolve();
                 }
             }
-        });
+        }
     });
 
-    funButtons.forEach(button => {
-        button.addEventListener("click", (e) => {
-            e.preventDefault();
+    
+    columnTwo.addEventListener("click", (e) => {
+        e.preventDefault();
 
+        const button = e.target;
+
+        if(button.tagName.toLowerCase() === "button") {
             if(button.id === "position")
                 changePositionColumnOne();
             if(button.id === "history")
                 alignLeftHistory();
             if(button.id === "random")
-                randomButtons();
-        });
-    })
+               randomButtons();
+        }
+    });
 });
 
 function addToDisplay(number, operator) {
@@ -65,11 +70,17 @@ function resetDisplay() {
     inputDisplay.value = "";
 }
 
+function deleteCharacter() {
+    const problem = inputDisplay.value;
+    inputDisplay.value = problem.slice(0, problem.length - 1);
+}
+
 function resolve() {
     const problem = inputDisplay.value;
-    let answer
+    let answer;
+
     try {
-        answer = eval(problem) % 1 === 0 ? eval(problem) : eval(problem).toFixed(2) ;   
+        answer = math.evaluate(problem) % 1 === 0 ? math.evaluate(problem) : math.evaluate(problem).toFixed(2) ;   
     } catch (error) {
         showError(error);
         return;
@@ -129,7 +140,7 @@ function alignLeftHistory() {
 
 function randomButtons() {
     const randomPositions = new Map();
-
+    const buttons = formCalc.querySelectorAll('button');
     buttons.forEach(button => {
         const data = (button.getAttribute('data-number') || button.getAttribute('data-operator')) || button.textContent;
         
@@ -137,7 +148,6 @@ function randomButtons() {
 
         while(randomPositions.get(randomNum)) {
             randomNum = Math.floor(Math.random() * (17 - 0 + 1)) + 0;
-
         }
 
         randomPositions.set(randomNum, data);
