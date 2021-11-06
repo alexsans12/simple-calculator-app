@@ -18,8 +18,9 @@ document.addEventListener("DOMContentLoaded", () => {
             else {
                 if (button.id === "reset") resetDisplay();
                 else if (button.id === "delete") deleteCharacter();
-                else {
+                else if (button.id === "resolve"){
                     if (inputDisplay.value !== "") resolve();
+                    else showError("Agrega numeros y ve la magia");
                 }
             }
         }
@@ -171,10 +172,10 @@ function randomButtons() {
         button.removeAttribute("data-number");
         button.removeAttribute("data-operator");
 
-        if (Number(data)) button.setAttribute("data-number", data);
-        else if (!Number(data) && button.id !== "") {
+        if (button.id !== "") {
             button.id = "";
-        } else if (data === "=") button.id = "resolve";
+        } else if (Number(data)) button.setAttribute("data-number", data);
+        else if (data === "=") button.id = "resolve";
         else if (data === "DEL") button.id = "delete";
         else if (data === "AC") button.id = "reset";
         else button.setAttribute("data-operator", data);

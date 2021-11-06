@@ -42,6 +42,8 @@ This is a solution to the [Challenge Calc](https://discord.gg/ndbz7d9g).
 - Added Math.js Library for the expressions
 - Changed event listeners for buttons
 
+- Fixed the code for the random NumPads
+
 ## Author
 
 - Frontend Mentor - [@alexsans12](https://www.frontendmentor.io/profile/alexsans12)
