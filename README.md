@@ -10,7 +10,7 @@ This is a solution to the [Challenge Calc](https://discord.gg/ndbz7d9g).
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
+  - [Updates](#Updates)
 - [Author](#author)
 
 ## Overview
@@ -36,6 +36,11 @@ This is a solution to the [Challenge Calc](https://discord.gg/ndbz7d9g).
 - CSS Grid
 - Desktop-first workflow
 - [SASS](https://sass-lang.com/) - For all styles
+
+### Updates
+- Added Del Button
+- Added Math.js Library for the expressions
+- Changed event listeners for buttons
 
 ## Author
 
