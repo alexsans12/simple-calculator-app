@@ -174,7 +174,9 @@ function randomButtons() {
 
         if (button.id !== "") {
             button.id = "";
-        } else if (Number(data)) button.setAttribute("data-number", data);
+        }
+        
+        if (Number(data)) button.setAttribute("data-number", data);
         else if (data === "=") button.id = "resolve";
         else if (data === "DEL") button.id = "delete";
         else if (data === "AC") button.id = "reset";
